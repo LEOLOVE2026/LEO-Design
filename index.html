@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEO Design Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    },
+                    colors: {
+                        black: '#0f0f0f',
+                        gray: {
+                            100: '#f5f5f5',
+                            200: '#eeeeee',
+                            300: '#e0e0e0',
+                            800: '#333333',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* 媒体悬停微缩放特效 */
+        .media-container {
+            overflow: hidden;
+        }
+        .media-container img, .media-container video {
+            transition: transform 0.7s ease;
+        }
+        .media-container:hover img, .media-container:hover video {
+            transform: scale(1.03);
+        }
+        /* 导航栏下划线特效 */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans">
+
+    <!-- 顶部导航 -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-40 px-6 py-6 md:px-12 lg:px-24 flex justify-between items-center transition-all duration-300">
+        <a href="#" class="text-2xl font-serif font-bold tracking-tight">LEO<span class="font-sans font-light text-xl ml-1">Design Lab</span></a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#" class="nav-link active">Work</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">News</a>
+            <a href="#" class="nav-link">Lab</a>
+            <a href="#" class="nav-link">Explore</a>
+        </div>
+        <button class="md:hidden flex flex-col space-y-1.5 p-2">
+            <span class="block w-6 h-0.5 bg-black"></span>
+            <span class="block w-6 h-0.5 bg-black"></span>
+        </button>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        
+        <!-- 顶部视频 Showreel (已替换为你的特效代码) -->
+        <section class="px-6 md:px-12 lg:px-24 mb-32">
+            <div class="w-full aspect-[16/9] md:aspect-[21/9] bg-black relative group cursor-pointer overflow-hidden rounded-sm flex flex-col">
+                <!-- 视频层：使用了你提供的 h-[130%] 和 object-top 特效 -->
+                <video 
+                    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4" 
+                    autoplay loop muted playsinline
+                    class="absolute inset-0 z-0 w-full h-[130%] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+                </video>
+                <!-- 交互层 -->
+                <div class="absolute inset-0 bg-black/10 z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+                <!-- 文字层 -->
+                <div class="absolute bottom-6 left-6 text-white text-sm font-medium tracking-wide z-20 pointer-events-none">Showreel 2026</div>
+            </div>
+        </section>
+
+        <!-- 欢迎标语 -->
+        <section class="px-6 md:px-12 lg:px-24 mb-40">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+                <div class="md:col-span-4">
+                    <h2 class="text-3xl md:text-4xl tracking-tight">Welcome</h2>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light">
+                        Creating interesting, remarkably simple and outstanding ideas, reshaping brand and commercial value.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目展示列表 (10个项目) -->
+        <section class="px-6 md:px-12 lg:px-24 mb-32" id="work-section">
+            <div class="mb-12 flex justify-between items-end border-b border-black pb-4 md:pb-6">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">Selected work</h2>
+                <button class="hidden md:flex items-center space-x-2 text-sm font-bold tracking-wider hover:text-gray-600 transition-colors uppercase mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span>Randomise</span>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:gap-x-12 lg:gap-y-24">
+                
+                <!-- 01: BOBO Taste Shop -->
+                <a href="./project-01.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/BOBO Taste Shop-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">BOBO Taste Shop</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 02: BOBO&COWCOW -->
+                <a href="./project-02.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/BC-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">BOBO&COWCOW</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 03: EYAS (已修正) -->
+                <a href="./project-03.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/EYAS-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">EYAS</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 04: EYAS KIDS -->
+                <a href="./project-04.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/KIDS-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">EYAS KIDS</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 05: YU FOUNDATION -->
+                <a href="./project-05.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/YU-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">YU FOUNDATION</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 06: C3 HOTEL -->
+                <a href="./project-06.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/C3-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">C3 HOTEL</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 07: YOUNG CUBILOSE -->
+                <a href="./project-07.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/YANG-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">YOUNG CUBILOSE</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 08: CHANYI HALL -->
+                <a href="./project-08.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/CYT-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">CHANYI HALL</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 09: HIBISCUS HALL -->
+                <a href="./project-09.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <img src="./images/FRT-A.jpg" alt="HIBISCUS HALL" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">HIBISCUS HALL</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+                <!-- 10: NOKNOK Kids cafe -->
+                <a href="./project-10.html" class="work-item cursor-pointer group block">
+                    <div class="media-container aspect-[4/3] bg-gray-100 mb-4 rounded-sm">
+                        <video class="w-full h-full object-cover" loop muted playsinline>
+                             <source src="./videos/NOKNOK-A.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-medium tracking-tight">NOKNOK Kids cafe</h4>
+                        <span class="text-sm text-gray-500">Brand Identity</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- 客户历史区域 -->
+        <section class="px-6 md:px-12 lg:px-24 mb-32 relative">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tighter mb-12 border-b border-gray-300 pb-6">A long history of great relationships</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Column 1: Art / Cultural & Packaging -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gray-200 pb-2">Art / Cultural & Packaging</h3>
+                    <ul class="flex flex-col text-sm md:text-base">
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/SXD-A.jpg">Sanxingdui Museum</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/GIGGLE-A.jpg">GIGGLE</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/DALI-A.jpg">Dali & Picasso Art Exhibition</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/AKS-A.jpg">Aksu Jujube</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/cb-a.jpg">Cuibo</li>
+                    </ul>
+                </div>
+                <!-- Column 2: Education -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gray-200 pb-2">Education</h3>
+                    <ul class="flex flex-col text-sm md:text-base">
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/RISE-A.jpg">RISE Education</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/MKS-A.jpg">MKS International Kindergarten</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/GJXY-A.jpg">EYAS International Academy</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/XYH-A.jpg">EYAS Alumni</li>
+                    </ul>
+                </div>
+                <!-- Column 3: Food & Beverage -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 border-b border-gray-200 pb-2">Food & Beverage</h3>
+                    <ul class="flex flex-col text-sm md:text-base">
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/FQFP-A.jpg">Fuqi Feipian</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/HXX-A.jpg">Hu Xiao Xian</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/BP-A.jpg">Benpu</li>
+                        <li class="client-item py-4 border-b border-gray-100 cursor-pointer hover:bg-black hover:text-white px-3 transition-colors duration-200" data-img="./images/NSK-A.jpg">Nongshikang</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 浮动预览图 (已修改为随图自适应高度) -->
+            <div id="client-preview" class="fixed pointer-events-none opacity-0 transition-opacity duration-300 z-50 w-64 md:w-80 lg:w-96 bg-transparent shadow-2xl overflow-hidden rounded-sm" style="left: 0; top: 0; transform: translate(20px, 20px);">
+                <img src="" alt="Client Project Preview" class="w-full h-auto block bg-white">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-200 px-6 md:px-12 lg:px-24 py-12 md:py-20 text-sm">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+            <div><a href="#" class="text-3xl font-serif font-bold tracking-tight">LEO<span class="font-sans font-light text-xl ml-1"></span></a></div>
+            <div class="flex flex-col space-y-1">
+                <span class="text-gray-500 mb-2">Business enquiries</span>
+                <span class="font-medium text-base">LEO</span>
+                <span class="text-base tracking-wide">+159 2899 8350</span>
+            </div>
+            <div class="flex flex-col space-y-2">
+                <a href="#" class="hover:text-gray-500 transition-colors w-fit border-b border-transparent hover:border-black">Instagram</a>
+                <a href="#" class="hover:text-gray-500 transition-colors w-fit border-b border-transparent hover:border-black">Linkedin</a>
+            </div>
+            <div class="flex flex-col space-y-2 md:items-end">
+                <a href="#" class="hover:text-gray-500 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-500 transition-colors">Subscribe</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 视频悬停播放逻辑 ---
+        const workItemsVideos = document.querySelectorAll('.work-item');
+        workItemsVideos.forEach(item => {
+            const video = item.querySelector('video');
+            if (video) {
+                item.addEventListener('mouseenter', () => {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {});
+                    }
+                });
+                item.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0; 
+                });
+            }
+        });
+
+        // --- 客户列表悬停图片逻辑 ---
+        const clientItems = document.querySelectorAll('.client-item');
+        const clientPreview = document.getElementById('client-preview');
+        const clientPreviewImg = clientPreview.querySelector('img');
+
+        clientItems.forEach(item => {
+            item.addEventListener('mouseenter', (e) => {
+                const imgSrc = item.getAttribute('data-img');
+                if(imgSrc) {
+                    clientPreviewImg.src = imgSrc;
+                    clientPreview.style.opacity = '1';
+                }
+            });
+            item.addEventListener('mousemove', (e) => {
+                clientPreview.style.left = e.clientX + 'px';
+                clientPreview.style.top = e.clientY + 'px';
+            });
+            item.addEventListener('mouseleave', () => {
+                clientPreview.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>
