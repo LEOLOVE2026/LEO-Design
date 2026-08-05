@@ -44,14 +44,12 @@
         <!-- 项目标题 & 介绍信息区 -->
         <div class="px-6 md:px-12 lg:px-24 py-16 md:py-24">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <!-- 左侧大标题与简介 -->
                 <div class="lg:col-span-8">
                     <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8">BOBO Taste Shop</h1>
                     <p class="text-xl md:text-3xl leading-relaxed font-light text-gray-800">
                         BOBO Taste Shop is a space dedicated to sharing BoBo's personal tastes. The overall design is centered around the BoBo IP character, conveying the warmth of BoBo's home and his unique flavors to consumers. This approach gives the brand store a more human, approachable, and intimate feel.
                     </p>
                 </div>
-                <!-- 右侧基础信息 -->
                 <div class="lg:col-span-3 lg:col-start-10 flex flex-col space-y-8 text-sm border-t border-black pt-4 lg:border-t-0 lg:border-l lg:pl-8 lg:pt-0">
                     <div>
                         <span class="block text-gray-500 mb-1">Client</span>
@@ -76,95 +74,69 @@
         <!-- 图片排版展示区 -->
         <div class="px-6 md:px-12 lg:px-24 space-y-8 md:space-y-12 lg:space-y-24">
             
-            <!-- 【板块1】视频模块：全宽 (放在了文字介绍的正下方) -->
+            <!-- 【板块1】视频模块 -->
             <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm">
                  <video class="w-full h-auto block object-cover" autoplay loop muted playsinline>
                     <source src="./videos/BOBO-A.mp4" type="video/mp4">
                  </video>
             </div>
 
-            <!-- 【板块2】详细图 6张：横竖混排自适应模式 -->
-            <!-- 使用 items-start 确保图片按照自身高度从顶部对齐，不会被强制拉伸 -->
+            <!-- 【板块2】详细图 6张 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-start">
-                
-                <!-- 图 1 -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm">
                     <img src="./images/BOBO-01.jpg" alt="BOBO Gallery 1" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
-                
-                <!-- 图 2 (带向下错落位移 mt-24) -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm mt-0 md:mt-24">
                     <img src="./images/BOBO-02.jpg" alt="BOBO Gallery 2" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
-                
-                <!-- 图 3 -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm">
                     <img src="./images/BOBO-03.jpg" alt="BOBO Gallery 3" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
-                
-                <!-- 图 4 (注意这里你跳过了04，直接是05，带向下错落) -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm mt-0 md:mt-24">
                     <img src="./images/BOBO-05.jpg" alt="BOBO Gallery 5" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
-                
-                <!-- 图 5 -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm">
                     <img src="./images/BOBO-06.jpg" alt="BOBO Gallery 6" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
-                
-                <!-- 图 6 -->
                 <div class="w-full bg-gray-100 rounded-sm overflow-hidden shadow-sm mt-0 md:mt-24">
                     <img src="./images/BOBO-07.jpg" alt="BOBO Gallery 7" class="w-full h-auto block hover:scale-[1.02] transition-transform duration-500">
                 </div>
             </div>
 
-            <!-- 【视觉缓冲】文字金句/设计理念 -->
+            <!-- 【视觉缓冲】 -->
             <div class="py-12 md:py-24 max-w-4xl mx-auto text-center">
                 <h3 class="text-2xl md:text-4xl font-light leading-snug">"The design approach focused on subtraction, stripping away the unnecessary to reveal the core essence of the brand."</h3>
             </div>
 
-            <!-- 【板块3】最底部图 6张 (强制统一比例 4:3，保持绝对整洁) -->
-            <!-- 移除了 items-start，让网格自然对齐 -->
+            <!-- 【板块3】最底部图 6张 (已修复中文图片名，改为纯英文 BOBO-B-01 到 06) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-                 <!-- 图 1 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <!-- 关键修改：w-full h-full object-cover 保证填满且不变形 -->
-                     <img src="./images/BOBO底-01.jpg" alt="Bottom 1" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-01.jpg" alt="Bottom 1" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
-                 
-                 <!-- 图 2 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <img src="./images/BOBO底-02.jpg" alt="Bottom 2" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-02.jpg" alt="Bottom 2" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
-                 
-                 <!-- 图 3 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <img src="./images/BOBO底-03.jpg" alt="Bottom 3" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-03.jpg" alt="Bottom 3" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
-                 
-                 <!-- 图 4 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <img src="./images/BOBO底-04.jpg" alt="Bottom 4" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-04.jpg" alt="Bottom 4" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
-                 
-                 <!-- 图 5 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <img src="./images/BOBO底-05.jpg" alt="Bottom 5" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-05.jpg" alt="Bottom 5" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
-                 
-                 <!-- 图 6 -->
                  <div class="w-full aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden shadow-sm">
-                     <img src="./images/BOBO底-06.jpg" alt="Bottom 6" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
+                     <img src="./images/BOBO-B-06.jpg" alt="Bottom 6" class="w-full h-full object-cover block hover:scale-[1.03] transition-transform duration-500">
                  </div>
             </div>
 
         </div>
         
         <!-- 底部前往下一个项目 -->
-        <a href="./index.html" class="block mt-32 border-t border-black px-6 md:px-12 lg:px-24 py-16 cursor-pointer hover:bg-gray-50 transition-colors group">
+        <a href="./project-02.html" class="block mt-32 border-t border-black px-6 md:px-12 lg:px-24 py-16 cursor-pointer hover:bg-gray-50 transition-colors group">
             <div class="text-sm text-gray-500 mb-4">Next Project</div>
             <div class="flex justify-between items-center">
-                <h2 class="text-4xl md:text-6xl font-bold tracking-tight group-hover:translate-x-4 transition-transform duration-500">Project Beta</h2>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight group-hover:translate-x-4 transition-transform duration-500">BOBO&COWCOW</h2>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
